@@ -1,4 +1,4 @@
-package me.jincrates.comma.domain.entity.member
+package me.jincrates.comma.domain.entity
 
 import me.jincrates.comma.domain.entity.AggregateRoot
 import me.jincrates.comma.domain.valueobject.MemberId
