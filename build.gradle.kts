@@ -9,19 +9,30 @@ plugins {
 
 group = "me.jincrates"
 version = "0.0.1-SNAPSHOT"
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-}
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    // spring boot
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // h2 database
+    runtimeOnly("com.h2database:h2")
+
+    // swagger
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
+
+    // jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.5")
+
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,6 +1,6 @@
 package me.jincrates.comma.domain.exception
 
-open class DomainException(
+class MemberDomainException(
         message: String,
         cause: Throwable? = null
-) : RuntimeException(message, cause)
+) : DomainException(message, cause)
