@@ -20,6 +20,11 @@ repositories {
 }
 
 dependencies {
+    // version
+    val h2DatabaseVersion = "2.1.214"
+    val swaggerVersion = "2.0.2"
+    val jwtVersion = "0.11.5"
+
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     // spring boot
@@ -29,13 +34,22 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     // h2 database
-    runtimeOnly("com.h2database:h2")
+    runtimeOnly("com.h2database:h2:${h2DatabaseVersion}")
 
     // swagger
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:${swaggerVersion}")
 
     // jpa
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.1.5")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    // security
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    testImplementation("org.springframework.security:spring-security-test")
+
+    // jwt
+    implementation("io.jsonwebtoken:jjwt-api:${jwtVersion}")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:${jwtVersion}")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:${jwtVersion}")
 }
 
 allOpen {

@@ -17,7 +17,7 @@ class MemberController(
 ) {
 
     @Operation(summary = "회원 등록")
-    @PostMapping
+    @PostMapping("/signup")
     fun createMember(
             @Valid @RequestBody request: MemberCreateRequest,
     ): CommonResponse<MemberResponse> {
