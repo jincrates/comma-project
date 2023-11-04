@@ -1,6 +1,6 @@
 package me.jincrates.comma.domain.valueobject
 
-abstract class BaseId<T>(val value : T) {
+abstract class BaseId<T>(val value: T) {
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -15,3 +15,11 @@ abstract class BaseId<T>(val value : T) {
         return value?.hashCode() ?: 0
     }
 }
+
+class MemberId(
+        value: Long
+) : BaseId<Long>(value)
+
+class MemberRoleId(
+        value: Long
+) : BaseId<Long>(value)
